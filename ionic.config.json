@@ -1,0 +1,7 @@
+{
+  "name": "BudgetPlanner",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
