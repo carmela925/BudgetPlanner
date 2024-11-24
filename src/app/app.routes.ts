@@ -10,4 +10,16 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'splash',
+    loadComponent: () => import('./splash/splash.page').then( m => m.SplashPage)
+  },
+  {
+    path: 'add-expense',
+    loadComponent: () => import('./pages/add-expense/add-expense.page').then( m => m.AddExpensePage)
+  },
+  {
+    path: 'money',
+    loadComponent: () => import('./pages/money/money.page').then( m => m.MoneyPage)
+  },
 ];
