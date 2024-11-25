@@ -4,6 +4,7 @@ import { addIcons } from 'ionicons';
 import { home, person, grid, card, chevronBackOutline, chevronDownOutline} from "ionicons/icons"
 import { TabsModule } from "./components/tabs/tabs.module";
 
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',

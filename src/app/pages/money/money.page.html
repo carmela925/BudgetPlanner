@@ -1,7 +1,77 @@
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Money</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="flex-item">
+    <ion-back-button icon="chevron-back-outline" defaultHref="/home"></ion-back-button>
+    <ion-searchbar class="search" placeholder="Animated"></ion-searchbar>
+  </div>
+
+  <!-- Month and Year Selector -->
+  <div class="selector">
+    <ion-select [(ngModel)]="selectedMonth" (ionChange)="onMonthOrYearChange()">
+      <ion-select-option *ngFor="let month of months" [value]="month.value">
+        {{ month.name }}
+      </ion-select-option>
+    </ion-select>
+
+    <ion-select [(ngModel)]="selectedYear" (ionChange)="onMonthOrYearChange()">
+      <ion-select-option *ngFor="let year of years" [value]="year">
+        {{ year }}
+      </ion-select-option>
+    </ion-select>
+  </div>
+
+  <!-- Horizontal Scrollable Dates -->
+  <div class="horizontal-scroll">
+    <div
+      *ngFor="let date of dates"
+      (click)="onDateSelect(date.date)"
+      class="date-box"
+      [class.selected]="selectedDate === date.date"
+    >
+      <div class="day-name">{{ date.day }}</div>
+      <div class="date-number">{{ date.date }}</div>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active">Expenses</div>
+    <div class="tab">Budgets</div>
+    <div class="tab">Incomes</div>
+  </div>
+
+  <div class="expense-list">
+    <ion-list lines="none">
+      <ion-item>
+        <i class="fa-solid fa-money-bills"></i>
+        <ion-label>
+          <h6>Shoes for thanksgiving</h6>
+          <p>Clothing</p>
+        </ion-label>
+        <p class="price">20 000 CFA</p>
+      </ion-item>
+      <ion-item>
+        <i class="fa-solid fa-money-bills"></i>
+        <ion-label>
+          <h6>Shoes for thanksgiving</h6>
+          <p>Clothing</p>
+        </ion-label>
+        <p class="price">20 000 CFA</p>
+      </ion-item>
+      <ion-item>
+        <i class="fa-solid fa-money-bills"></i>
+        <ion-label>
+          <h6>Shoes for thanksgiving</h6>
+          <p>Clothing</p>
+        </ion-label>
+        <p class="price">20 000 CFA</p>
+      </ion-item>
+      <ion-item>
+        <i class="fa-solid fa-money-bills"></i>
+        <ion-label>
+          <h6>Shoes for thanksgiving</h6>
+          <p>Clothing</p>
+        </ion-label>
+        <p class="price">20 000 CFA</p>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
