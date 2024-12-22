@@ -1,3 +1,10 @@
+.black{
+  background-color: #1f1f1f;
+  padding-bottom: 30px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
 .selector {
     display: flex;
     justify-content: center;
@@ -10,6 +17,9 @@
     overflow-x: auto;
     gap: 10px;
     padding: 10px;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+    scroll-behavior: smooth;
   }
   
   .date-box {
@@ -46,10 +56,26 @@
     font-weight: bold;
   }
   
+.backbtn{
+  --color: #ffffffcc;
+  --background: #ffffff27;
+}  
+
 .search{
     --box-shadow: none;
-    width: 50px;
-}
+    --background: rgba(255, 255, 255, 0.1); /* Transparent background */
+    --border-radius: 25px; /* Rounded corners */
+    --color: white; /* Text color */
+    padding: 0;
+    --placeholder-color: rgba(255, 255, 255, 0.6); /* Placeholder text color */
+    --search-icon-color: white; /* Search icon color */
+    --border: 2px solid rgba(255, 255, 255, 0.3); /* Transparent border */
+    transition: all 0.3s ease;
+  }
+  .search:focus-within {
+    --background: rgba(255, 255, 255, 0.2); /* Slightly opaque background when focused */
+    --border: 2px solid rgba(255, 255, 255, 0.8); /* Brighter border on focus */
+  }
 
 .expense-list{
     h6.title{
@@ -74,4 +100,38 @@
         // margin: 0 0 20px 0;
       }
     }
+}
+
+.flex-item{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  // overflow-x: hidden;
+}
+.flex-item.pb{
+  padding-bottom: 15px;
+  justify-content: left;
+}
+
+.tabs{
+  margin: 10px 0;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  position: relative;
+}
+
+.tab{
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+  padding: 10px 15px;
+}
+
+.tab.active {
+  color: #fff; /* Active tab color */
+  background-color: #333333;
+  transition:  background-color 0.3s ease;
+  border-radius: 20px;
 }

@@ -15,6 +15,7 @@ export class AnalyticsPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("hey")
   }
 
 }

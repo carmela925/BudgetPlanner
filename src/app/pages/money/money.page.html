@@ -1,77 +1,103 @@
 <ion-content>
-  <div class="flex-item">
-    <ion-back-button icon="chevron-back-outline" defaultHref="/home"></ion-back-button>
-    <ion-searchbar class="search" placeholder="Animated"></ion-searchbar>
-  </div>
-
-  <!-- Month and Year Selector -->
-  <div class="selector">
-    <ion-select [(ngModel)]="selectedMonth" (ionChange)="onMonthOrYearChange()">
-      <ion-select-option *ngFor="let month of months" [value]="month.value">
-        {{ month.name }}
-      </ion-select-option>
-    </ion-select>
-
-    <ion-select [(ngModel)]="selectedYear" (ionChange)="onMonthOrYearChange()">
-      <ion-select-option *ngFor="let year of years" [value]="year">
-        {{ year }}
-      </ion-select-option>
-    </ion-select>
-  </div>
-
-  <!-- Horizontal Scrollable Dates -->
-  <div class="horizontal-scroll">
-    <div
-      *ngFor="let date of dates"
-      (click)="onDateSelect(date.date)"
-      class="date-box"
-      [class.selected]="selectedDate === date.date"
-    >
-      <div class="day-name">{{ date.day }}</div>
-      <div class="date-number">{{ date.date }}</div>
+  <div class="black ion-padding">
+    <div class="flex-item pb">
+      <ion-back-button button class="backbtn" icon="chevron-back-outline" defaultHref="/home"></ion-back-button>
+      <ion-searchbar class="search" placeholder="Animated"></ion-searchbar>
     </div>
+  
+    <!-- Month and Year Selector -->
+     <div class="flex-item">
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+      <ion-button (click)="onReset()" expand="block" shape="round">
+        Today
+      </ion-button>
+     </div>
+  
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="datetime" [value]="initialDate" presentation="month-year" (ionChange)="onDateChange($event)"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+    <!-- Horizontal Scrollable Dates -->
+    <div #scrollContainer class="horizontal-scroll">
+      <div
+        *ngFor="let date of dates"
+        (click)="onDateSelect(date.date)"
+        #dateBox
+        class="date-box"
+        [class.selected]="selectedDate === date.date"
+      >
+        <div class="day-name">{{ date.day }}</div>
+        <div class="date-number">{{ date.date }}</div>
+      </div>
+    </div>  
   </div>
-
-  <div class="tabs">
-    <div class="tab active">Expenses</div>
-    <div class="tab">Budgets</div>
-    <div class="tab">Incomes</div>
-  </div>
-
-  <div class="expense-list">
-    <ion-list lines="none">
-      <ion-item>
-        <i class="fa-solid fa-money-bills"></i>
-        <ion-label>
-          <h6>Shoes for thanksgiving</h6>
-          <p>Clothing</p>
-        </ion-label>
-        <p class="price">20 000 CFA</p>
-      </ion-item>
-      <ion-item>
-        <i class="fa-solid fa-money-bills"></i>
-        <ion-label>
-          <h6>Shoes for thanksgiving</h6>
-          <p>Clothing</p>
-        </ion-label>
-        <p class="price">20 000 CFA</p>
-      </ion-item>
-      <ion-item>
-        <i class="fa-solid fa-money-bills"></i>
-        <ion-label>
-          <h6>Shoes for thanksgiving</h6>
-          <p>Clothing</p>
-        </ion-label>
-        <p class="price">20 000 CFA</p>
-      </ion-item>
-      <ion-item>
-        <i class="fa-solid fa-money-bills"></i>
-        <ion-label>
-          <h6>Shoes for thanksgiving</h6>
-          <p>Clothing</p>
-        </ion-label>
-        <p class="price">20 000 CFA</p>
-      </ion-item>
-    </ion-list>
+  <div class="white ion-padding">
+    <div class="tabs flex-item">
+      <div [class.active]="selectedTab===0" (click)="onSelectTab(0)" class="tab">Expenses</div>
+      <div [class.active]="selectedTab===1" (click)="onSelectTab(1)" class="tab">Budgets</div>
+      <div [class.active]="selectedTab===2" (click)="onSelectTab(2)" class="tab">Incomes</div>
+    </div>
+  
+    <div *ngIf="selectedTab===0" class="expense-list">
+      <ion-list lines="none">
+        <ion-item button>
+          <i class="fa fa-receipt"></i>
+          <ion-label>
+            <h6>Shoes for thanksgiving</h6>
+            <p>Clothing</p>
+          </ion-label>
+          <p class="price">20 000 CFA</p>
+        </ion-item>
+        <ion-item button>
+          <i class="fa fa-receipt"></i>
+          <ion-label>
+            <h6>Shoes for thanksgiving</h6>
+            <p>Clothing</p>
+          </ion-label>
+          <p class="price">20 000 CFA</p>
+        </ion-item>
+        <ion-item button>
+          <i class="fa fa-receipt"></i>
+          <ion-label>
+            <h6>Shoes for thanksgiving</h6>
+            <p>Clothing</p>
+          </ion-label>
+          <p class="price">20 000 CFA</p>
+        </ion-item>
+        <ion-item button>
+          <i class="fa fa-receipt"></i>
+          <ion-label>
+            <h6>Shoes for thanksgiving</h6>
+            <p>Clothing</p>
+          </ion-label>
+          <p class="price">20 000 CFA</p>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div *ngIf="selectedTab===1" class="budget-list">
+      <ion-list lines="none">
+        <ion-item button>
+          <i class="fa fa-wallet"></i> 
+          <ion-label>
+            <h6>Shoes for thanksgiving</h6>
+            <p>Clothing</p>
+          </ion-label>
+          <p class="price">20 000 CFA</p>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div *ngIf="selectedTab===2" class="budget-list">
+      <ion-list lines="none">
+        <ion-item button>
+          <i class="fa-solid fa-money-bills"></i> 
+          <ion-label>
+            <h6>Shoes for thanksgiving</h6>
+            <p>Clothing</p>
+          </ion-label>
+          <p class="price">20 000 CFA</p>
+        </ion-item>
+      </ion-list>
+    </div>
   </div>
 </ion-content>
