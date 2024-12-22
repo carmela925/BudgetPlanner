@@ -1,23 +1,33 @@
-<ion-content>
+<ion-content class="ion-padding">
   <div class="flex-item">
     <ion-back-button icon="chevron-back-outline" defaultHref="/home"></ion-back-button>
-    <ion-searchbar class="search" placeholder="Animated"></ion-searchbar>
+    <ion-searchbar 
+      (click)="onSearch()"
+      (ionCancel)="onSearchCancel()"
+      (ionBlur)="onSearchCancel()"
+      [class.expanded]="expandsearch" class="search" placeholder="Search here..."></ion-searchbar>
   </div>
 
   <!-- Month and Year Selector -->
-  <div class="selector">
-    <ion-select [(ngModel)]="selectedMonth" (ionChange)="onMonthOrYearChange()">
-      <ion-select-option *ngFor="let month of months" [value]="month.value">
-        {{ month.name }}
-      </ion-select-option>
-    </ion-select>
+  <div class="flex-item">
+    <div class="selector">
+      <ion-select color="white" [(ngModel)]="selectedMonth" (ionChange)="onMonthOrYearChange()">
+        <ion-select-option *ngFor="let month of months" [value]="month.value">
+          {{ month.name }}
+        </ion-select-option>
+      </ion-select>
 
-    <ion-select [(ngModel)]="selectedYear" (ionChange)="onMonthOrYearChange()">
-      <ion-select-option *ngFor="let year of years" [value]="year">
-        {{ year }}
-      </ion-select-option>
-    </ion-select>
+      <ion-select [(ngModel)]="selectedYear" (ionChange)="onMonthOrYearChange()">
+        <ion-select-option *ngFor="let year of years" [value]="year">
+          {{ year }}
+        </ion-select-option>
+      </ion-select>
+    </div>
+  <div>
+    <input type="date" name="datepicker" id="date">
   </div>
+  </div> 
+
 
   <!-- Horizontal Scrollable Dates -->
   <div class="horizontal-scroll">

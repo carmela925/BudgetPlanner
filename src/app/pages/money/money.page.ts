@@ -15,21 +15,22 @@ import { RouterModule } from '@angular/router';
 export class MoneyPage implements OnInit {
   dates: { date: number; day: string }[] = [];
   selectedDate: number | null = null;
+  expandsearch: boolean = false;
 
   // Month and Year Data
   months = [
-    { name: 'January', value: 0 },
-    { name: 'February', value: 1 },
-    { name: 'March', value: 2 },
-    { name: 'April', value: 3 },
+    { name: 'Jan', value: 0 },
+    { name: 'Feb', value: 1 },
+    { name: 'Mar', value: 2 },
+    { name: 'Apr', value: 3 },
     { name: 'May', value: 4 },
-    { name: 'June', value: 5 },
-    { name: 'July', value: 6 },
-    { name: 'August', value: 7 },
-    { name: 'September', value: 8 },
-    { name: 'October', value: 9 },
-    { name: 'November', value: 10 },
-    { name: 'December', value: 11 },
+    { name: 'Jun', value: 5 },
+    { name: 'Jul', value: 6 },
+    { name: 'Aug', value: 7 },
+    { name: 'Sep', value: 8 },
+    { name: 'Oct', value: 9 },
+    { name: 'Nov', value: 10 },
+    { name: 'Dec', value: 11 },
   ];
   years: number[] = [];
   selectedMonth = new Date().getMonth();
@@ -65,4 +66,16 @@ export class MoneyPage implements OnInit {
     this.selectedDate = date; // Highlight selected date
     console.log(`Selected date: ${this.selectedYear}-${this.selectedMonth + 1}-${date}`);
   }
+
+  onSearch() {
+    if (this.expandsearch) {
+      console.log('Search clicked');
+    } else {
+      this.expandsearch = true;
+    }
+  }
+  onSearchCancel() {
+    this.expandsearch = false;
+  }
+  
 }
