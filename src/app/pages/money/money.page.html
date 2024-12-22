@@ -19,7 +19,7 @@
   
     <ion-modal [keepContentsMounted]="true">
       <ng-template>
-        <ion-datetime id="datetime" [value]="initialDate" presentation="month-year" (ionChange)="onDateChange($event)"></ion-datetime>
+        <ion-datetime class="custom-datetime" id="datetime" [value]="initialDate" presentation="month-year" (ionChange)="onDateChange($event)"></ion-datetime>
       </ng-template>
     </ion-modal>
     <!-- Horizontal Scrollable Dates -->
