@@ -2,7 +2,11 @@
   <div class="black ion-padding">
     <div class="flex-item pb">
       <ion-back-button button class="backbtn" icon="chevron-back-outline" defaultHref="/home"></ion-back-button>
-      <ion-searchbar class="search" placeholder="Animated"></ion-searchbar>
+      <ion-searchbar 
+      (click)="onSearch()"
+      (ionCancel)="onSearchCancel()"
+      (ionBlur)="onSearchCancel()"
+      [class.expanded]="expandsearch" class="search" placeholder="Search here..."></ion-searchbar>
     </div>
   
     <!-- Month and Year Selector -->

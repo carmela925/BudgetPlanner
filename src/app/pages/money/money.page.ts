@@ -18,6 +18,7 @@ export class MoneyPage implements OnInit,AfterViewInit {
 
   dates: { date: number; day: string }[] = [];
   selectedDate: number | null = new Date().getDate();
+  expandsearch: boolean = false;
   selectedMonth = new Date().getMonth();
   selectedYear = new Date().getFullYear();
   initialDate: string = new Date().toISOString();
@@ -107,5 +108,16 @@ export class MoneyPage implements OnInit,AfterViewInit {
 
   onSelectTab(n: number){
     this.selectedTab = n;
+  }
+
+  onSearch() {
+    if (this.expandsearch) {
+      console.log('Search clicked');
+    } else {
+      this.expandsearch = true;
+    }
+  }
+  onSearchCancel() {
+    this.expandsearch = false;
   }
 }

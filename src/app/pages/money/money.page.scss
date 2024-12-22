@@ -7,7 +7,7 @@
 
 .selector {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     gap: 10px;
     margin: 20px 0;
   }
@@ -29,26 +29,31 @@
     align-items: center;
     min-width: 60px;
     height: 70px;
-    background: var(--ion-color-light);
-    border: 1px solid var(--ion-color-medium);
+    color: #fff;
+    border: 2px solid #ffffff;
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s;
   }
   
   .date-box:hover {
-    background: var(--ion-color-primary-tint);
+    background: #ffffff3b;
   }
   
   .date-box.selected {
-    background: var(--ion-color-primary);
-    color: var(--ion-color-light);
+    background: #ffffff;
+    color: #000000;
     font-weight: bold;
+    border: 2px solid #00000000;
+  }
+
+  .date-box.selected .day-name{
+    color: #fff;
   }
   
   .day-name {
     font-size: 12px;
-    color: var(--ion-color-medium);
+    color: #ffffff;
   }
   
   .date-number {
@@ -63,15 +68,40 @@
 
 .search{
     --box-shadow: none;
-    --background: rgba(255, 255, 255, 0.1); /* Transparent background */
-    --border-radius: 25px; /* Rounded corners */
-    --color: white; /* Text color */
-    padding: 0;
-    --placeholder-color: rgba(255, 255, 255, 0.6); /* Placeholder text color */
-    --search-icon-color: white; /* Search icon color */
-    --border: 2px solid rgba(255, 255, 255, 0.3); /* Transparent border */
-    transition: all 0.3s ease;
+    width: 50px;
+    --background: rgba(255, 255, 255, 0.1);
+    --border-radius: 25px;
+    animation: normalSearch 0.5s forwards;
+}
+@keyframes normalSearch {
+  from {
+    width: 250px;
   }
+  to {
+    width: 50px;
+  }
+}
+.search.expanded{
+  width: 250px;
+  animation: animatedSearch 0.5s forwards;
+  --background: rgba(255, 255, 255, 0.1); /* Transparent background */
+  --border-radius: 25px; /* Rounded corners */
+  --color: white; /* Text color */
+  // padding: 0;
+  --placeholder-color: rgba(255, 255, 255, 0.6); /* Placeholder text color */
+  --search-icon-color: white; /* Search icon color */
+  --border: 2px solid rgba(255, 255, 255, 0.3); /* Transparent border */
+  transition: all 0.3s ease;
+}
+@keyframes animatedSearch {
+  from {
+    width: 50px;
+  }
+  to {
+    width: 250px;
+  }
+}
+
   .search:focus-within {
     --background: rgba(255, 255, 255, 0.2); /* Slightly opaque background when focused */
     --border: 2px solid rgba(255, 255, 255, 0.8); /* Brighter border on focus */
