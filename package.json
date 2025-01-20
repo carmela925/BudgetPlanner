@@ -31,7 +31,8 @@
     "apexcharts": "^4.3.0",
     "BudgetPlanner": "file:",
     "chart.js": "^4.4.6",
-    "ngx-apexcharts": "^0.7.0-beta.1",
+    "ng-apexcharts": "^1.15.0",
+    "ngx-apexcharts": "^0.7.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"

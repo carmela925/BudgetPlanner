@@ -1,180 +1,145 @@
-.black{
-  background-color: #1f1f1f;
-  padding-bottom: 30px;
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 30px;
+ion-content{
+  position: relative;
+  --background: #ececec;
 }
-.today{
-  --background: none;
-  --box-shadow: none;
-  border-radius: 50px;
-  color: #fff;
-  border: 2px solid #fff;
-}
-ion-datetime-button::part(native) {
-  color: #fff;
-  background-color: transparent;
-  border: 2px solid #00ebc8;
-  border-radius: 20px;
-  padding: 7px 20px;
-}
-.selector {
-    display: flex;
-    justify-content: left;
-    gap: 10px;
-    margin: 20px 0;
+header.flex-item{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+  padding-bottom: 0;
+  gap: 20px;
+  ion-icon{
+      font-size: 24px;
   }
-  
-  .horizontal-scroll {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 10px;
-    scrollbar-width: none;
-    -ms-overflow-style: none; 
-    scroll-behavior: smooth;
-  }
-  
-  .date-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-width: 60px;
-    height: 70px;
-    color: #fff;
-    border: 2px solid #ffffff;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .date-box:hover {
-    background: #ffffff3b;
-  }
-  
-  .date-box.selected {
-    background: #ffffff;
-    color: #000000;
-    font-weight: bold;
-    border: 2px solid #00000000;
-  }
-
-  .date-box.selected .day-name{
-    color: #000;
-  }
-  
-  .day-name {
-    font-size: 12px;
-    color: #ffffff;
-  }
-  
-  .date-number {
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-.backbtn{
-  --color: #ffffffcc;
-  --background: #ffffff27;
-}  
-
-.search{
-    --box-shadow: none;
-    width: 50px;
-    --background: none;
-    --border-radius: 25px;
-    animation: normalSearch 0.5s forwards;
-}
-@keyframes normalSearch {
-  from {
-    width: 250px;
-  }
-  to {
-    width: 50px;
-  }
-}
-.search.expanded{
-  width: 250px;
-  animation: animatedSearch 0.5s forwards;
-  --background: rgba(255, 255, 255, 0.1); /* Transparent background */
-  --border-radius: 25px; /* Rounded corners */
-  --color: #fff; /* Text color */
-  // padding: 0;
-  --placeholder-color: rgba(255, 255, 255, 0.6); /* Placeholder text color */
-  --search-icon-color: white; /* Search icon color */
-  --border: 2px solid rgba(255, 255, 255, 0.3); /* Transparent border */
-  // transition: width 0.3s ease;
-}
-@keyframes animatedSearch {
-  from {
-    width: 50px;
-  }
-  to {
-    width: 250px;
-  }
-}
-
-  .search:focus-within {
-    --background: rgba(255, 255, 255, 0.2); /* Slightly opaque background when focused */
-    --border: 2px solid rgba(255, 255, 255, 0.8); /* Brighter border on focus */
-  }
-
-.expense-list{
-    h6.title{
-      font-size: 0.8rem;
-      color: #515151;
+  h1{
+      font-size: 1.5rem;
       margin: 0;
-    }
-    ion-item{
-      --background: #f5f5f5;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      i{
-        background-color: #262626; 
-        padding: 10px;
-        color: #fff;
-        border-radius: 8px;
-        margin-right: 10px;
-      }
-      p.price{
-        font-size: 0.8rem;
-        font-weight: 600;
-        // margin: 0 0 20px 0;
-      }
-    }
+      font-weight: bold;
+  }
 }
 
-.flex-item{
-  width: 100%;
+.icon{
+  height: 40px;
+  width: 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  position: relative;
-  // overflow-x: hidden;
+  justify-content: center;
+  border-radius: 50%;
 }
-.flex-item.pb{
-  padding-bottom: 15px;
-  // justify-content: left;
+.icon:hover{
+  background-color: #ededed88;
+}
+.icon.trash:hover{
+  background-color: transparent;
+}
+.ripple-parent {
+  position: relative;
+  overflow: hidden;
 }
 
-.tabs{
-  margin: 10px 0;
-  background-color: #e0e0e0;
-  border-radius: 20px;
-  position: relative;
+.neumorphism{
+  padding: 15px 20px;
+  color: #a3a3a3;
+
+  border: 3px solid #ececec;
+  border-radius: 15px;
+  // background-color: #fbfbfb;
+  transition: all 1s ease;
+  box-shadow: 
+              -10px -10px 15px rgba(255,255,255,0.5), 
+              10px 10px 15px rgba(70,70,70,0.12);
+  h5{
+    font-weight: 400!important;
+    margin: 0;
+  }
+
 }
 
-.tab{
-  cursor: pointer;
-  position: relative;
-  transition: color 0.3s ease;
-  padding: 10px 15px;
+.neumorphism.active{
+  // border: 1px solid #fff;
+  color: #7a7a7a;
+  box-shadow: 
+            -10px -10px 15px rgba(255,255,255,0.5), 
+            10px 10px 15px rgba(70,70,70,0.12),
+            inset -10px -10px 15px rgba(255,255,255,0.5),
+            inset 10px 10px 15px rgba(70,70,70,0.12);
 }
 
-.tab.active {
-  color: #fff; /* Active tab color */
-  background-color: #333333;
-  transition:  background-color 0.3s ease;
-  border-radius: 20px;
+.list{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  overflow-y: auto;
+  background-color: #000;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  ion-list{
+    background: transparent;
+  }
+  ion-item{
+    --background: transparent;
+    color: #ffffff;
+  }
+  ion-item.ion-activated h2{
+    color: #ffffffbe;
+  }
+}
+
+::ng-deep .apexcharts-legend {
+  display: none !important;
+}
+
+
+h1,h2,h3,h4,h5,h6{
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+.category{
+  height: 150px;
+  width: 150px;
+  min-width: 150px;
+  padding: 10px;
+  background-color: #ececec;
+  border-radius: 10px;
+  box-shadow: 0px 0 10px #0000004a;
+  text-align: center;
+  margin-left: 10px;
+  *{margin: auto;}
+  p{
+    font-size: 12px;
+    color: #7a7a7a;
+  }
+}
+
+main{
+  padding-left: 20px;
+  h5{
+    color: #7a7a7a;
+    font-size: 14px;
+    margin-top: 20px;
+    font-weight: normal;
+  }
+  h1{
+    color: #111;
+    margin: 10px 0;
+    font-weight: 700;
+  }
+}
+
+.categories{
+  display: flex;
+  overflow-x: auto;
+  height: 180px;
+  align-items: center;
+  // gap: 10px;
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+  scroll-behavior: smooth;
+}
+
+::ng-deep .apexcharts-pie path {
+  stroke: none !important; /* Removes strokes around pie segments */
 }

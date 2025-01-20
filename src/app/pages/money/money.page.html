@@ -1,3 +1,106 @@
 <ion-content>
-
+  <header class="flex-item ion-padding" style="padding-top: 0;">
+    <div class="icon ion-activatable ripple-parent" [routerLink]="['/home']">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+      <ion-ripple-effect></ion-ripple-effect>
+    </div>
+    <div class="neumorphism active">
+      <h5>Budgets</h5>
+    </div>
+    <div class="neumorphism">
+      <h5>Income</h5>
+    </div>
+  </header>
+  <main class="ion-padding">
+    <h5>Category's Budget</h5>
+    <h1>15 000 CFA</h1>
+    <div class="categories">
+      <div class="category">
+        <h6>Groceries</h6>
+        <p>15 expenses</p>
+        <div style="width: 100px; height: 100px;">
+          <apx-chart
+            [series]="chartOptions.series!"
+            [chart]="chartOptions.chart!"
+            [labels]="chartOptions.labels!"
+            [colors]="chartOptions.colors!"
+            [plotOptions]="chartOptions.plotOptions!"
+            [dataLabels]="chartOptions.dataLabels!"
+          ></apx-chart>
+        </div>
+      </div>
+      <div class="category">
+        <h6>Groceries</h6>
+        <p>15 expenses</p>
+        <div style="width: 100px; height: 100px;">
+          <apx-chart
+            [series]="chartOptions.series!"
+            [chart]="chartOptions.chart!"
+            [labels]="chartOptions.labels!"
+            [colors]="chartOptions.colors!"
+            [plotOptions]="chartOptions.plotOptions!"
+            [dataLabels]="chartOptions.dataLabels!"
+          ></apx-chart>
+        </div>
+      </div>
+      <div class="category">
+        <h6>Groceries</h6>
+        <p>15 expenses</p>
+        <div style="width: 100px; height: 100px;">
+          <apx-chart
+            [series]="chartOptions.series!"
+            [chart]="chartOptions.chart!"
+            [labels]="chartOptions.labels!"
+            [colors]="chartOptions.colors!"
+            [plotOptions]="chartOptions.plotOptions!"
+            [dataLabels]="chartOptions.dataLabels!"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="list ion-padding">
+    <ion-list lines="none">
+      <ion-item button>
+        <ion-label>
+          <h2>An expense just here cool</h2>
+          <p>500</p>
+        </ion-label>
+        <div class="icon trash ion-activatable ripple-parent">
+          <ion-icon style="font-size: 20px;" color="danger" slot="end" name="trash"></ion-icon>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+      </ion-item>
+      <ion-item button>
+        <ion-label>
+          <h2>An expense just here cool</h2>
+          <p>500</p>
+        </ion-label>
+        <div class="icon trash ion-activatable ripple-parent">
+          <ion-icon style="font-size: 20px;" color="danger" slot="end" name="trash"></ion-icon>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+      </ion-item>
+      <ion-item button>
+        <ion-label>
+          <h2>An expense just here cool</h2>
+          <p>500</p>
+        </ion-label>
+        <div class="icon trash ion-activatable ripple-parent">
+          <ion-icon style="font-size: 20px;" color="danger" slot="end" name="trash"></ion-icon>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+      </ion-item>
+      <ion-item button>
+        <ion-label>
+          <h2>An expense just here cool</h2>
+          <p>500</p>
+        </ion-label>
+        <div class="icon trash ion-activatable ripple-parent">
+          <ion-icon style="font-size: 20px;" color="danger" slot="end" name="trash"></ion-icon>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
