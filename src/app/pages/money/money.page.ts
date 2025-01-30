@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonContent, IonList, IonItem, IonLabel, IonIcon, IonRippleEffect } from '@ionic/angular/standalone';
+import { IonContent, IonList, IonItem, IonLabel, IonIcon, IonRippleEffect, IonImg, IonButton, IonButtons } from '@ionic/angular/standalone';
 import { RouterModule } from '@angular/router';
 import { ChartComponent, ApexOptions } from 'ngx-apexcharts';
 
@@ -8,7 +8,7 @@ import { ChartComponent, ApexOptions } from 'ngx-apexcharts';
   templateUrl: './money.page.html',
   styleUrls: ['./money.page.scss'],
   standalone: true,
-  imports: [
+  imports: [IonButtons, IonButton, IonImg, 
     IonRippleEffect, 
     IonIcon, 
     IonContent, 
