@@ -1,0 +1,47 @@
+<ion-content class="ion-padding" [fullscreen]="true">
+  <div class="flex-item pb">
+    <ion-back-button button class="backbtn" icon="chevron-back-outline" defaultHref="/home"></ion-back-button>
+    <ion-searchbar 
+    [(ngModel)]="searchText"
+    (click)="onSearch()"
+    (ionCancel)="onSearchCancel()"
+    (ionBlur)="onSearchCancel()"
+    [class.expanded]="expandsearch" class="search" placeholder="Search here..."></ion-searchbar>
+  </div>
+  <div class="expense-list">
+    <ion-list lines="none">
+      <ion-item button>
+        <i class="fa fa-receipt"></i> 
+        <ion-label>
+          <h6>Shoes for thanksgiving</h6>
+          <p>Clothing</p>
+        </ion-label>
+        <p class="price">20 000 CFA</p>
+      </ion-item>
+      <ion-item button>
+        <i class="fa fa-receipt"></i>
+        <ion-label>
+          <h6>Shoes for thanksgiving</h6>
+          <p>Clothing</p>
+        </ion-label>
+        <p class="price">20 000 CFA</p>
+      </ion-item>
+      <ion-item button>
+        <i class="fa fa-receipt"></i>
+        <ion-label>
+          <h6>Shoes for thanksgiving</h6>
+          <p>Clothing</p>
+        </ion-label>
+        <p class="price">20 000 CFA</p>
+      </ion-item>
+      <ion-item button>
+        <i class="fa fa-receipt"></i>
+        <ion-label>
+          <h6>Shoes for thanksgiving</h6>
+          <p>Clothing</p>
+        </ion-label>
+        <p class="price">20 000 CFA</p>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

@@ -30,4 +30,13 @@ export const routes: Routes = [
     path: 'add-money/:id',
     loadComponent: () => import('./pages/add-money/add-money.page').then( m => m.AddMoneyPage)
   },
+  {
+    path: 'home/view-expenses',
+    loadComponent: () => import('./pages/view-expenses/view-expenses.page').then( m => m.ViewExpensesPage)
+  },
+  {
+    path: 'expense-detail',
+    loadComponent: () => import('./pages/expense-detail/expense-detail.page').then( m => m.ExpenseDetailPage)
+  },
+
 ];

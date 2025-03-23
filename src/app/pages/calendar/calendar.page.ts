@@ -18,6 +18,7 @@ export class CalendarPage implements OnInit,AfterViewInit {
   dates: { date: number; day: string }[] = [];
   selectedDate: number | null = new Date().getDate();
   expandsearch: boolean = false;
+  searchText: string = '';
   selectedMonth = new Date().getMonth();
   selectedYear = new Date().getFullYear();
   initialDate: string = new Date().toISOString();
@@ -52,10 +53,6 @@ export class CalendarPage implements OnInit,AfterViewInit {
       // Calculate scroll offset to center the selected element
       const offset =
         boxRect.left - containerRect.left + container.scrollLeft - container.offsetWidth / 2 + boxElement.offsetWidth / 2;
-        console.log("boxRect: ",boxRect)
-        console.log("containerRect: ",containerRect)
-        console.log("offset: " + offset)
-        console.log("offset: " + offset)
 
       container.scrollTo({
         left: offset,
@@ -114,9 +111,15 @@ export class CalendarPage implements OnInit,AfterViewInit {
       console.log('Search clicked');
     } else {
       this.expandsearch = true;
+      console.log(this.expandsearch);
     }
   }
   onSearchCancel() {
-    this.expandsearch = false;
+    if(this.searchText === ''){
+      this.expandsearch = false;
+      console.log(this.expandsearch);
+    } else {
+      console.log(this.expandsearch);
+    }
   }
 }

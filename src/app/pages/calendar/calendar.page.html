@@ -3,6 +3,7 @@
     <div class="flex-item pb">
       <ion-back-button button class="backbtn" icon="chevron-back-outline" defaultHref="/home"></ion-back-button>
       <ion-searchbar 
+      [(ngModel)]="searchText"
       (click)="onSearch()"
       (ionCancel)="onSearchCancel()"
       (ionBlur)="onSearchCancel()"
