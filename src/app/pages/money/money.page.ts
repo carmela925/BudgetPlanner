@@ -25,7 +25,7 @@ export class MoneyPage{
       type: 'donut', // Specifies a donut chart
     },
     series: [60, 40], // Example: 60% spent, 40% not spent
-    colors: ['#000000', '#fff'], // Black for spent, gray for not spent
+    colors: ['#000000', '#c1c1c1'], // Black for spent, gray for not spent
     labels: ['Spent', 'Not Spent'], // Optional, but can be used for reference
     dataLabels: {
       enabled: false, // Hides the labels on the chart
