@@ -15,20 +15,8 @@ export const routes: Routes = [
     loadComponent: () => import('./splash/splash.page').then( m => m.SplashPage)
   },
   {
-    path: 'add-expense',
-    loadComponent: () => import('./pages/add-expense/add-expense.page').then( m => m.AddExpensePage)
-  },
-  {
     path: 'money',
     loadComponent: () => import('./pages/money/money.page').then( m => m.MoneyPage)
-  },
-  {
-    path: 'add-budget',
-    loadComponent: () => import('./pages/add-budget/add-budget.page').then( m => m.AddBudgetPage)
-  },
-  {
-    path: 'add-income',
-    loadComponent: () => import('./pages/add-income/add-income.page').then( m => m.AddIncomePage)
   },
   {
     path: 'analytics',
