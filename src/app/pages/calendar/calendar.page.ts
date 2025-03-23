@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, QueryList, ViewChildren} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { IonContent, IonButton, IonBackButton, IonSearchbar, IonList, IonItem, IonLabel, IonDatetime, IonModal, IonDatetimeButton} from '@ionic/angular/standalone';
+import { IonContent, IonButton, IonBackButton, IonSearchbar, IonList, IonItem, IonLabel, IonDatetime, IonModal, IonDatetimeButton, IonIcon } from '@ionic/angular/standalone';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './calendar.page.html',
   styleUrls: ['./calendar.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, IonContent, IonButton, IonBackButton, IonSearchbar, RouterModule, IonList, IonItem, IonLabel, IonDatetime, IonModal, IonDatetimeButton]
+  imports: [IonIcon, CommonModule, FormsModule, ReactiveFormsModule, IonContent, IonButton, IonBackButton, IonSearchbar, RouterModule, IonList, IonItem, IonLabel, IonDatetime, IonModal, IonDatetimeButton]
 })
 export class CalendarPage implements OnInit,AfterViewInit {
   @ViewChild('scrollContainer', { static: false }) scrollContainer!: ElementRef;

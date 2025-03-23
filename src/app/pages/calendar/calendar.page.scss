@@ -18,12 +18,22 @@ ion-content{
     padding-top: 0;
     width: 100%;
   }
-  .today{
+  .today,.add{
     --background: none;
     --box-shadow: none;
     border-radius: 50px;
     color: #fff;
     border: 2px solid #fff;
+  }
+  .add{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #00ebc8;
+    color: #00ebc8;
   }
   ion-datetime-button::part(native) {
     color: #fff;
