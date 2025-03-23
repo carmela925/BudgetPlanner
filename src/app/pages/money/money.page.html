@@ -15,7 +15,7 @@
     <div class="flex-items">
       <h5>Category's Budget</h5>
       <ion-buttons slot="start">
-        <ion-button shape="round">
+        <ion-button [routerLink]="['/add-money', 'Budget']" shape="round">
           <ion-icon slot="start" name="add"></ion-icon>
           Budget
         </ion-button>
@@ -23,7 +23,7 @@
     </div>
     <h1>15 000 CFA</h1>
     <div class="categories">
-      <div class="category">
+      <div class="category active">
         <h6>Groceries</h6>
         <p>15 expenses</p>
         <div style="width: 100px; height: 100px;">
@@ -31,7 +31,7 @@
             [series]="chartOptions.series!"
             [chart]="chartOptions.chart!"
             [labels]="chartOptions.labels!"
-            [colors]="chartOptions.colors!"
+            [colors]="activeColors.colors"
             [plotOptions]="chartOptions.plotOptions!"
             [dataLabels]="chartOptions.dataLabels!"
           ></apx-chart>
@@ -69,8 +69,9 @@
   </main>
   <div class="list ion-padding">
     <div class="buttons">
-      <ion-buttons slot="start">
-        <ion-button slot="end">
+        <ion-icon class="white" name="list-outline"></ion-icon>
+        <ion-buttons slot="start">
+        <ion-button [routerLink]="['/add-money', 'Expense']" slot="end">
           <ion-icon slot="start" name="add"></ion-icon>
           Expense
         </ion-button>

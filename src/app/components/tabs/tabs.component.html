@@ -3,19 +3,19 @@
   </div> -->
   <div class="wrapper">
     <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="home">
+      <ion-tab-button tab="home" (click)="navigate('home')">
         <i class="fa-solid fa-house fa-xl"></i>
       </ion-tab-button>
-      <ion-tab-button tab="calendar">
+      <ion-tab-button tab="calendar" (click)="navigate('calendar')">
         <i class="fa-solid fa-calendar fa-xl"></i>
       </ion-tab-button>
-      <ion-tab-button tab="add-expense" class="central">
+      <ion-tab-button  tab="add-money" (click)="goToAddExpense()" class="central">
         <i class="fa-solid fa-plus fa-xl central"></i>
       </ion-tab-button>
-      <ion-tab-button tab="money">
+      <ion-tab-button tab="money" (click)="navigate('money')">
         <i class="fa-solid fa-credit-card fa-xl"></i>
       </ion-tab-button>
-      <ion-tab-button tab="analytics">
+      <ion-tab-button tab="analytics" (click)="navigate('analytics')">
         <i class="fa-solid fa-chart-simple fa-xl"></i>
       </ion-tab-button>
     </ion-tab-bar>

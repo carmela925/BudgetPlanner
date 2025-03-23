@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { home, person, grid, card, chevronBackOutline, chevronDownOutline, add, trashOutline, trash} from "ionicons/icons"
+import { home, grid, card, chevronBackOutline, chevronDownOutline, add, trashOutline, trash, listOutline} from "ionicons/icons"
 import { TabsModule } from "./components/tabs/tabs.module";
-
 
 @Component({
   selector: 'app-root',
@@ -21,7 +20,8 @@ export class AppComponent {
       chevronBackOutline,
       chevronDownOutline,
       trashOutline,
-      trash
+      trash,
+      listOutline
     })
   }
 }

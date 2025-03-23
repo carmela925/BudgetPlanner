@@ -85,7 +85,7 @@ header.flex-item{
   ion-list{
     background: transparent;
     margin-bottom: 50px;
-    margin-top: 50px;
+    margin-top: 70px;
     overflow: auto;
   }
   ion-item{
@@ -122,6 +122,10 @@ h1,h2,h3,h4,h5,h6{
     font-size: 12px;
     color: #7a7a7a;
   }
+}
+.category.active{
+  background-color: #000;
+  color: #fff;
 }
 
 main{
@@ -176,7 +180,12 @@ main{
   height: 70px;
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: space-between;
+  padding: 0 15px 0 20px;
+}
+.white{
+  color: #fff;
+  font-size: 32px;
 }
 
 .flex-items{

@@ -38,4 +38,8 @@ export const routes: Routes = [
     path: 'calendar',
     loadComponent: () => import('./pages/calendar/calendar.page').then( m => m.CalendarPage)
   },
+  {
+    path: 'add-money/:id',
+    loadComponent: () => import('./pages/add-money/add-money.page').then( m => m.AddMoneyPage)
+  },
 ];

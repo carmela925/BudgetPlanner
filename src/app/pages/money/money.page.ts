@@ -41,4 +41,8 @@ export class MoneyPage{
       show: false, // Hides the legend (side labels)
     },
   };
+
+  activeColors = {
+    colors: ['#fff', '#868686']
+  }
 }
